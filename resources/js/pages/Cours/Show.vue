@@ -1,6 +1,4 @@
-
-// ...existing code...
-
+<!-- resources/js/pages/Cours/Show.vue -->
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
@@ -27,7 +25,7 @@ const showMenu = ref(false);
       <ul class="space-y-2">
         <li v-for="c in cours" :key="c.slug">
           <Link
-            :href="route('cours.show', c.slug)"
+            :href="route('cours.show', c.slug)" prefetch
             class="block px-3 py-2 rounded hover:bg-slate-200"
             :class="c.slug.toLowerCase() === titre.toLowerCase() ? 'bg-slate-300 font-bold' : ''"
           >

@@ -1,6 +1,7 @@
 <?php
-
 namespace App\Http\Controllers;
+
+// <!-- app/Http/Controllers/CoursController.php -->
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
