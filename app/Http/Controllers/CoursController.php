@@ -32,9 +32,21 @@ class CoursController extends Controller
         }
         $contenu = file_get_contents($chemin);
         $titre = ucfirst($nomCours);
+
+        // Récupérer la liste des cours pour le sommaire
+        $cheminListe = resource_path("markdown/cours");
+        $cours = collect(File::files($cheminListe))
+            ->filter(fn($f) => $f->getExtension() === 'md')
+            ->map(fn($f) => [
+                'slug' => pathinfo($f->getFilename(), PATHINFO_FILENAME),
+                'titre' => ucfirst(pathinfo($f->getFilename(), PATHINFO_FILENAME))
+            ])
+            ->values();
+
         return Inertia::render('Cours/Show', [
             'titre' => $titre,
-            'contenu' => $contenu
+            'contenu' => $contenu,
+            'cours' => $cours
         ]);
     }
 }
