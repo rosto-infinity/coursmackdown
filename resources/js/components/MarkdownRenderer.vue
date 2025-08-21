@@ -3,12 +3,30 @@
   <div v-html="html" class="prose prose-slate max-w-none prose-h1:text-4xl prose-h1:font-extrabold prose-h2:text-2xl prose-h2:font-bold prose-h3:text-xl prose-h3:font-semibold prose-p:leading-relaxed prose-p:text-lg prose-code:text-base prose-code:bg-slate-100 prose-code:rounded prose-code:px-1 prose-code:py-0.5 prose-pre:bg-slate-900 prose-pre:text-slate-100 prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto prose-pre:relative" />
 </template>
 
+
 <script setup lang="ts">
-import { marked } from 'marked';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github-dark.css';
+import { marked, Renderer } from 'marked';
 import { onMounted, ref, watch } from 'vue';
+
 
 const props = defineProps<{ contenu: string }>()
 const html = ref('')
+
+
+// Configure marked to use highlight.js for code blocks (compatible v5+)
+const renderer = new Renderer();
+renderer.code = ({ text, lang }) => {
+  let highlighted;
+  if (lang && hljs.getLanguage(lang)) {
+    highlighted = hljs.highlight(text, { language: lang }).value;
+  } else {
+    highlighted = hljs.highlightAuto(text).value;
+  }
+  return `<pre><code class=\"hljs language-${lang || ''}\">${highlighted}</code></pre>`;
+};
+marked.use({ renderer });
 
 function addCopyButtons() {
   const blocks = document.querySelectorAll('.prose pre')
