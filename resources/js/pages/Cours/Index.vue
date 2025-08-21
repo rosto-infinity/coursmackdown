@@ -4,7 +4,7 @@
     <ul class="space-y-2">
       <li v-for="c in cours" :key="c.slug">
         <Link
-          :href="route('cours.show', c.slug)"
+          :href="route('cours.show', c.slug)" prefetch
           class="block px-4 py-2 bg-slate-100 hover:bg-slate-200 rounded"
         >
           {{ c.titre }}
