@@ -1,6 +1,6 @@
 # Introduction à PHP
 
-- PHP est un langage de script côté serveur principalement utilisé pour le développement web.
+- PHP est un langage de script côté serveur principalement utilisé pour le développement web fulstack.
 
 ```html
 <template>
