@@ -63,7 +63,7 @@ const showMenu = ref(false);
     </transition>
 
     <!-- Contenu du cours -->
-    <main class="flex-1 max-w-3xl mx-auto py-8 px-4">
+    <main class="flex-1 max-w-5xl mx-auto py-8 px-4">
       <h1 class="text-3xl font-bold mb-6">{{ titre }}</h1>
       <MarkdownRenderer :contenu="contenu" />
     </main>
