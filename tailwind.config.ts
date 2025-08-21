@@ -6,6 +6,7 @@ const config: Config = {
     './resources/**/*.blade.php',
     './resources/**/*.js',
     './resources/**/*.vue',
+     "./resources/**/*.{vue,js,ts,jsx,tsx,md}",
   ],
   theme: {
     extend: {},

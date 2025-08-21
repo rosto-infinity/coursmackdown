@@ -1,6 +1,7 @@
 <?php
 
 use Inertia\Inertia;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CoursController;
 
@@ -14,6 +15,8 @@ Route::get('dashboard', function () {
 
 Route::get('/cours', [CoursController::class, 'index'])->name('cours.index');
 Route::get('/cours/{nomCours}', [CoursController::class, 'show'])->name('cours.show');
+
+
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
