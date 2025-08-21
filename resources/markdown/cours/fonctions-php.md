@@ -27,6 +27,9 @@ echo saluer(); // Affiche Salut, inconnu !
 ```
 
 ## Fonction anonyme
+- PHP
+- POO
+- VUE js
 
 ```php
 <?php
