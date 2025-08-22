@@ -29,9 +29,9 @@ const md = new MarkdownIt({
   typographer: true,
   highlight: (str: string, lang?: string): string => {
     if (lang && hljs.getLanguage(lang)) {
-      return `<pre><code class="hljs language-${lang}">${hljs.highlight(str, { language: lang }).value}</code></pre>`
+      return `<pre style="padding:5px; border-radius:7px; background:red"><code style="border-radius:7px;" class="hljs language-${lang}">${hljs.highlight(str, { language: lang }).value}</code></pre>`
     }
-    return `<pre><code class="hljs">${hljs.highlightAuto(str).value}</code></pre>`
+    return `<pre><code style="border-radius:7px;" class="hljs">${hljs.highlightAuto(str).value}</code></pre>`
   }
 })
 
@@ -90,6 +90,9 @@ watch(() => props.contenu, renderMarkdown)
   box-shadow: none !important;
   border-radius: 8.5rem !important;
   padding: 1rem !important;
+}
+code.hljs{
+  border-radius: 8.5rem !important;
 }
 .copy-btn {
   opacity: 0.8;
