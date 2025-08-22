@@ -19,7 +19,7 @@ const showMenu = ref(false);
 
 <template>
   <div class="flex">
-    <!-- Sommaire latéral desktop -->
+    <!-- ---Sommaire latéral desktop -->
     <aside class="hidden md:block w-64 min-h-screen border-r border-slate-200 bg-slate-50 px-4 py-8 sticky top-0">
       <h2 class="text-lg font-bold mb-4">Sommaire</h2>
       <ul class="space-y-2">
