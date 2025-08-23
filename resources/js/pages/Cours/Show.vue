@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
 
+import AppearanceTabs from '@/components/AppearanceTabs.vue';
 import MarkdownRenderer from '../../components/MarkdownRenderer.vue';
 
 defineProps<{
@@ -33,6 +34,7 @@ defineProps<{
           </li>
         </ul>
       </div>
+      <AppearanceTabs  />
     </nav>
 
     <!-- === Contenu du cours === -->

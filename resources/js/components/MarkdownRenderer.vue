@@ -29,7 +29,7 @@ const md = new MarkdownIt({
   typographer: true,
   highlight: (str: string, lang?: string): string => {
     if (lang && hljs.getLanguage(lang)) {
-      return `<pre style="padding:5px; border-radius:7px; background: rgba(0, 1, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);"><code style="border-radius:7px; background:#1D293D" class="hljs language-${lang}">${hljs.highlight(str, { language: lang }).value}</code></pre>`
+      return `<pre style="padding:5px; border-radius:7px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);"><code style="border-radius:7px; background:#1D293D" class="hljs language-${lang}">${hljs.highlight(str, { language: lang }).value}</code></pre>`
     }
     return `<pre><code style="border-radius:7px;" class="hljs">${hljs.highlightAuto(str).value}</code></pre>`
   }
